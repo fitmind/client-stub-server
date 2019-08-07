@@ -1,5 +1,11 @@
 # Fitmind Stub Server
 
+## Install dependencies
+
+```bash
+yarn
+```
+
 ## Running on Dev Mode
 
 All the files changed inside src/\*\*.ts will trigger a rebuild except the tests files, this will run on port 9999

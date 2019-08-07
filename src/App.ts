@@ -1,4 +1,4 @@
-import express, {  Request, Response } from 'express';
+import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
@@ -7,6 +7,8 @@ import helmet from 'helmet';
 import compression from 'compression';
 import { CREATED, OK } from 'http-status-codes';
 import exampleResponse from './responses/example-response';
+import loginSuccessResponse from './responses/login-success-response';
+import getUserMeResponse from './responses/get-user-response';
 
 const createApp = (app: express.Application): express.Application => {
   app.use(
@@ -33,6 +35,13 @@ const createApp = (app: express.Application): express.Application => {
     res.status(CREATED);
   });
 
+  app.post('/user/login', (req: Request, res: Response) => {
+    res.status(OK).json(loginSuccessResponse);
+  });
+
+  app.get('/user/me', (req: Request, res: Response) => {
+    res.status(OK).json(getUserMeResponse);
+  });
   return app;
 };
 

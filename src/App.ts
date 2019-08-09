@@ -8,6 +8,7 @@ import compression from 'compression';
 import { CREATED, OK } from 'http-status-codes';
 import exampleResponse from './responses/example-response';
 import loginSuccessResponse from './responses/login-success-response';
+import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
 import getUserMeResponse from './responses/get-user-response';
 
 const createApp = (app: express.Application): express.Application => {
@@ -32,7 +33,7 @@ const createApp = (app: express.Application): express.Application => {
   });
 
   app.post('/user/register', (req: Request, res: Response) => {
-    res.status(CREATED);
+    res.status(OK).json(customerRegistrationSuccessResponse);
   });
 
   app.post('/user/login', (req: Request, res: Response) => {
@@ -42,6 +43,7 @@ const createApp = (app: express.Application): express.Application => {
   app.get('/user/me', (req: Request, res: Response) => {
     res.status(OK).json(getUserMeResponse);
   });
+
   return app;
 };
 

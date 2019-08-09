@@ -1,4 +1,4 @@
-const getUserMeResponse = {
+const customerRegistrationSuccessResponse = {
   _id: '1234',
   name: 'Fitmind User',
   createdAt: new Date().toISOString().slice(0, 10),
@@ -7,4 +7,4 @@ const getUserMeResponse = {
   interestedInExperiseAreas: ['PERSONAL_COACH'],
 };
 
-export default getUserMeResponse;
+export default customerRegistrationSuccessResponse;

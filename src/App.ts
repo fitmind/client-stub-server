@@ -10,6 +10,8 @@ import exampleResponse from './responses/example-response';
 import loginSuccessResponse from './responses/login-success-response';
 import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
 import getUserMeResponse from './responses/get-user-response';
+import createUserToken from './utils/create-token';
+import CONFIG from './config/config';
 
 const createApp = (app: express.Application): express.Application => {
   app.use(
@@ -37,7 +39,13 @@ const createApp = (app: express.Application): express.Application => {
   });
 
   app.post('/user/login', (req: Request, res: Response) => {
-    res.status(OK).json(loginSuccessResponse);
+    const token = createUserToken('1');
+    res.cookie(CONFIG.cookies.user, token, {
+      maxAge: CONFIG.authTokenExpiryDate,
+      httpOnly: true,
+    });
+
+    res.status(CREATED).json(loginSuccessResponse);
   });
 
   app.get('/user/me', (req: Request, res: Response) => {

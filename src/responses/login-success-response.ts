@@ -1,5 +1,5 @@
 const loginSuccessResponse = {
-  message: 'Login Success',
+  message: 'logged in successfully',
 };
 
 export default loginSuccessResponse;

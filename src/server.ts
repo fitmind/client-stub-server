@@ -2,6 +2,8 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 import express from 'express';
 import createApp from './App';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const CONCURRENCY = process.env.WEB_CONCURRENCY || 1;
 console.log('----------------------------');

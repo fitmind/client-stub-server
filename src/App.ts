@@ -9,6 +9,7 @@ import { CREATED, OK } from 'http-status-codes';
 import exampleResponse from './responses/example-response';
 import loginSuccessResponse from './responses/login-success-response';
 import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
+import customerDashboardResponse from './responses/customer-dashboard-response';
 import getUserMeResponse from './responses/get-user-response';
 import createUserToken from './utils/create-token';
 import CONFIG from './config/config';
@@ -50,6 +51,14 @@ const createApp = (app: express.Application): express.Application => {
 
   app.get('/user/me', (req: Request, res: Response) => {
     res.status(OK).json(getUserMeResponse);
+  });
+
+  app.get('/expertise/all', (req: Request, res: Response) => {
+    res.status(OK).json(CONFIG.expertise);
+  });
+
+  app.get('/user/dashboard', (req: Request, res: Response) => {
+    res.status(OK).json(customerDashboardResponse);
   });
 
   return app;

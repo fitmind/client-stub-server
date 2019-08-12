@@ -1,8 +1,8 @@
 export enum expertise {
-  PERSONAL_COACH = 'PERSONAL_COACH',
-  YOGA_COACH = 'YOGA_COACH',
-  NUTRITIONIST = 'NUTRITIONIST',
-  LIFE_COACH = 'LIFE_COACH',
+  PERSONAL_COACH = 'Personal Trainer',
+  YOGA_COACH = 'Yoga Teacher',
+  NUTRITIONIST = 'Nutritionist',
+  LIFE_COACH = 'Life Coach',
 }
 
 export enum UserTypes {

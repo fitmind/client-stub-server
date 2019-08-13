@@ -7,6 +7,7 @@ const getUserMeResponse = {
   email: 'user1@fitmind.io',
   interestedInExperiseAreas: ['PERSONAL_COACH'],
   phone: '+44 20 7123 1234',
+  imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBx76lQwzW2cAsjz5JqgVp_ReTpVji6G_pMO6crXSJn9NETq3F',
 };
 
 export default getUserMeResponse;

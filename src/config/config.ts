@@ -13,6 +13,7 @@ export enum UserTypes {
 
 const CONFIG = {
   authTokenExpiryDate: 10000000000000,
+  jwtSecret: 'jSDFkjslhdljkJ#LHkjsf',
   cookies: {
     user: 'X-Fitmind-Authorization',
     expert: 'X-Fitmind--Expert-Authorization',

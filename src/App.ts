@@ -63,6 +63,7 @@ const createApp = (app: express.Application): express.Application => {
   });
 
   app.post('/user/logout', (req: Request, res: Response) => {
+    res.clearCookie(CONFIG.cookies.user);
     res.status(OK).json(logoutSuccessResponse);
   });
   return app;

@@ -8,6 +8,7 @@ import compression from 'compression';
 import { CREATED, OK } from 'http-status-codes';
 import exampleResponse from './responses/example-response';
 import loginSuccessResponse from './responses/login-success-response';
+import logoutSuccessResponse from './responses/logout-success-response';
 import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
 import customerDashboardResponse from './responses/customer-dashboard-response';
 import getUserMeResponse from './responses/get-user-response';
@@ -61,6 +62,9 @@ const createApp = (app: express.Application): express.Application => {
     res.status(OK).json(customerDashboardResponse);
   });
 
+  app.post('/user/logout', (req: Request, res: Response) => {
+    res.status(OK).json(logoutSuccessResponse);
+  });
   return app;
 };
 

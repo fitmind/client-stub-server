@@ -42,7 +42,7 @@ const createApp = (app: express.Application): express.Application => {
 
   app.post('/user/login', (req: Request, res: Response) => {
     const token = createUserToken('1');
-    res.cookie(CONFIG.cookies.user, token, {
+    res.status(201).cookie(CONFIG.cookies.user, token, {
       maxAge: CONFIG.authTokenExpiryDate,
       httpOnly: true,
     });

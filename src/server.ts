@@ -23,6 +23,8 @@ if (process.env.NODE_ENV === 'production') {
 
 const app = createApp(express());
 
-app.listen(9999, () => {
-  console.log(`Magic happening on port ${9999}`);
+const port = process.env.PORT || 9999;
+
+app.listen(port, () => {
+  console.log(`Magic happening on port ${port}`);
 });

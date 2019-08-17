@@ -37,7 +37,7 @@ const createApp = (app: express.Application): express.Application => {
   });
 
   app.post('/user/register', (req: Request, res: Response) => {
-    res.status(OK).json(customerRegistrationSuccessResponse);
+    res.status(CREATED).json(customerRegistrationSuccessResponse);
   });
 
   app.post('/user/login', (req: Request, res: Response) => {

@@ -12,6 +12,7 @@ import logoutSuccessResponse from './responses/logout-success-response';
 import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
 import customerDashboardResponse from './responses/customer-dashboard-response';
 import customerDashboardUnAuthorizedResponse from './responses/customer-dashboard-unauthorized-response';
+import customerUserdUnAuthorizedResponse from './responses/customer-user-unauthorized-response';
 import getUserMeResponse from './responses/get-user-response';
 import createUserToken from './utils/create-token';
 import CONFIG from './config/config';
@@ -58,7 +59,19 @@ const createApp = (app: express.Application): express.Application => {
   });
 
   app.get('/user/me', (req: Request, res: Response) => {
-    res.status(OK).json(getUserMeResponse);
+    if (req.cookies[CONFIG.cookies.user]) {
+      res.status(OK).json(getUserMeResponse);
+    } else {
+      res.status(UNAUTHORIZED).json(customerUserdUnAuthorizedResponse);
+    }
+  });
+
+  app.put('/user/me', (req: Request, res: Response) => {
+    if (req.cookies[CONFIG.cookies.user]) {
+      res.status(CREATED).json(getUserMeResponse);
+    } else {
+      res.status(UNAUTHORIZED).json(customerUserdUnAuthorizedResponse);
+    }
   });
 
   app.get('/expertise/all', (req: Request, res: Response) => {

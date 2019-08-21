@@ -5,12 +5,13 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import helmet from 'helmet';
 import compression from 'compression';
-import { CREATED, OK } from 'http-status-codes';
+import { CREATED, OK, UNAUTHORIZED } from 'http-status-codes';
 import exampleResponse from './responses/example-response';
 import loginSuccessResponse from './responses/login-success-response';
 import logoutSuccessResponse from './responses/logout-success-response';
 import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
 import customerDashboardResponse from './responses/customer-dashboard-response';
+import customerDashboardUnAuthorizedResponse from './responses/customer-dashboard-unauthorized-response';
 import getUserMeResponse from './responses/get-user-response';
 import createUserToken from './utils/create-token';
 import CONFIG from './config/config';
@@ -65,7 +66,11 @@ const createApp = (app: express.Application): express.Application => {
   });
 
   app.get('/user/dashboard', (req: Request, res: Response) => {
-    res.status(OK).json(customerDashboardResponse);
+    if (req.cookies[CONFIG.cookies.user]) {
+      res.status(OK).json(customerDashboardResponse);
+    } else {
+      res.status(UNAUTHORIZED).json(customerDashboardUnAuthorizedResponse);
+    }
   });
 
   app.post('/user/logout', (req: Request, res: Response) => {

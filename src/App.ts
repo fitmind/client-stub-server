@@ -16,6 +16,7 @@ import customerUserdUnAuthorizedResponse from './responses/customer-user-unautho
 import getUserMeResponse from './responses/get-user-response';
 import createUserToken from './utils/create-token';
 import CONFIG from './config/config';
+import customerProfileUpdateSuccessResponse from './responses/customer-user-profile-response';
 
 const createApp = (app: express.Application): express.Application => {
   app.use(
@@ -68,7 +69,7 @@ const createApp = (app: express.Application): express.Application => {
 
   app.put('/user/me', (req: Request, res: Response) => {
     if (req.cookies[CONFIG.cookies.user]) {
-      res.status(CREATED).json(getUserMeResponse);
+      res.status(CREATED).json(customerProfileUpdateSuccessResponse);
     } else {
       res.status(UNAUTHORIZED).json(customerUserdUnAuthorizedResponse);
     }

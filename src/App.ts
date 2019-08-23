@@ -17,6 +17,7 @@ import getUserMeResponse from './responses/get-user-response';
 import createUserToken from './utils/create-token';
 import CONFIG from './config/config';
 import customerProfileUpdateSuccessResponse from './responses/customer-user-profile-response';
+import expertRegistrationSuccessResponse from './responses/expert-register-success-response';
 
 const createApp = (app: express.Application): express.Application => {
   app.use(
@@ -75,10 +76,6 @@ const createApp = (app: express.Application): express.Application => {
     }
   });
 
-  app.get('/expertise/all', (req: Request, res: Response) => {
-    res.status(OK).json(CONFIG.expertise);
-  });
-
   app.get('/user/dashboard', (req: Request, res: Response) => {
     if (req.cookies[CONFIG.cookies.user]) {
       res.status(OK).json(customerDashboardResponse);
@@ -91,6 +88,11 @@ const createApp = (app: express.Application): express.Application => {
     res.clearCookie(CONFIG.cookies.user);
     res.status(OK).json(logoutSuccessResponse);
   });
+
+  app.post('/expert/register', (req: Request, res: Response) => {
+    res.status(CREATED).json(expertRegistrationSuccessResponse);
+  });
+
   return app;
 };
 

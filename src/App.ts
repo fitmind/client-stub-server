@@ -13,6 +13,8 @@ import customerRegistrationSuccessResponse from './responses/customer-register-s
 import customerProfileUpdateSuccessResponse from './responses/customer-user-profile-response';
 import customerUserdUnAuthorizedResponse from './responses/customer-user-unauthorized-response';
 import exampleResponse from './responses/example-response';
+import expertDashboardResponse from './responses/expert-dashboard-response';
+import expertDashboardUnAuthorizedResponse from './responses/expert-dashboard-unauthorized-response';
 import expertRegistrationSuccessResponse from './responses/expert-register-success-response';
 import expertLoginSuccessResponse from './responses/expert-success-response';
 import expertUserdUnAuthorizedResponse from './responses/expert-user-unauthorized-response';
@@ -116,6 +118,14 @@ const createApp = (app: express.Application): express.Application => {
   app.post('/expert/logout', (req: Request, res: Response) => {
     res.clearCookie(CONFIG.cookies.expert);
     res.status(OK).json(logoutSuccessResponse);
+  });
+
+  app.get('/expert/dashboard', (req: Request, res: Response) => {
+    if (req.cookies[CONFIG.cookies.expert]) {
+      res.status(OK).json(expertDashboardResponse);
+    } else {
+      res.status(UNAUTHORIZED).json(expertDashboardUnAuthorizedResponse);
+    }
   });
   return app;
 };

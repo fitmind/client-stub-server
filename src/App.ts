@@ -113,6 +113,10 @@ const createApp = (app: express.Application): express.Application => {
     }
   });
 
+  app.post('/expert/logout', (req: Request, res: Response) => {
+    res.clearCookie(CONFIG.cookies.expert);
+    res.status(OK).json(logoutSuccessResponse);
+  });
   return app;
 };
 

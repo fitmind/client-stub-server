@@ -1,23 +1,26 @@
-import express, { Request, Response } from 'express';
 import bodyParser from 'body-parser';
-import morgan from 'morgan';
+import compression from 'compression';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
+import express, { Request, Response } from 'express';
 import helmet from 'helmet';
-import compression from 'compression';
 import { CREATED, OK, UNAUTHORIZED } from 'http-status-codes';
-import exampleResponse from './responses/example-response';
-import loginSuccessResponse from './responses/login-success-response';
-import logoutSuccessResponse from './responses/logout-success-response';
-import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
+import morgan from 'morgan';
+import CONFIG from './config/config';
 import customerDashboardResponse from './responses/customer-dashboard-response';
 import customerDashboardUnAuthorizedResponse from './responses/customer-dashboard-unauthorized-response';
-import customerUserdUnAuthorizedResponse from './responses/customer-user-unauthorized-response';
-import getUserMeResponse from './responses/get-user-response';
-import createUserToken from './utils/create-token';
-import CONFIG from './config/config';
+import customerRegistrationSuccessResponse from './responses/customer-register-success-response';
 import customerProfileUpdateSuccessResponse from './responses/customer-user-profile-response';
+import customerUserdUnAuthorizedResponse from './responses/customer-user-unauthorized-response';
+import exampleResponse from './responses/example-response';
 import expertRegistrationSuccessResponse from './responses/expert-register-success-response';
+import expertLoginSuccessResponse from './responses/expert-success-response';
+import expertUserdUnAuthorizedResponse from './responses/expert-user-unauthorized-response';
+import getExpertMeResponse from './responses/get-expert-response';
+import getUserMeResponse from './responses/get-user-response';
+import loginSuccessResponse from './responses/login-success-response';
+import logoutSuccessResponse from './responses/logout-success-response';
+import createUserToken from './utils/create-token';
 
 const createApp = (app: express.Application): express.Application => {
   app.use(
@@ -91,6 +94,23 @@ const createApp = (app: express.Application): express.Application => {
 
   app.post('/expert/register', (req: Request, res: Response) => {
     res.status(CREATED).json(expertRegistrationSuccessResponse);
+  });
+
+  app.post('/expert/login', (req: Request, res: Response) => {
+    const token = createUserToken('1');
+    res.status(201).cookie(CONFIG.cookies.expert, token, {
+      maxAge: CONFIG.authTokenExpiryDate,
+      httpOnly: true,
+    });
+
+    res.status(CREATED).json(expertLoginSuccessResponse);
+  });
+  app.get('/expert/me', (req: Request, res: Response) => {
+    if (req.cookies[CONFIG.cookies.expert]) {
+      res.status(OK).json(getExpertMeResponse);
+    } else {
+      res.status(UNAUTHORIZED).json(expertUserdUnAuthorizedResponse);
+    }
   });
 
   return app;

@@ -1,5 +1,5 @@
-const expertUserdUnAuthorizedResponse = {
+const expertUserUnAuthorizedResponse = {
   message: 'Unauthorised to fetch this expert, the cookie authentication did not succeed',
 };
 
-export default expertUserdUnAuthorizedResponse;
+export default expertUserUnAuthorizedResponse;

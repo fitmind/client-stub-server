@@ -17,7 +17,8 @@ import expertDashboardResponse from './responses/expert-dashboard-response';
 import expertDashboardUnAuthorizedResponse from './responses/expert-dashboard-unauthorized-response';
 import expertRegistrationSuccessResponse from './responses/expert-register-success-response';
 import expertLoginSuccessResponse from './responses/expert-success-response';
-import expertUserdUnAuthorizedResponse from './responses/expert-user-unauthorized-response';
+import expertProfileUpdateSuccessResponse from './responses/expert-user-profile-response';
+import expertUserUnAuthorizedResponse from './responses/expert-user-unauthorized-response';
 import getExpertMeResponse from './responses/get-expert-response';
 import getUserMeResponse from './responses/get-user-response';
 import loginSuccessResponse from './responses/login-success-response';
@@ -111,7 +112,7 @@ const createApp = (app: express.Application): express.Application => {
     if (req.cookies[CONFIG.cookies.expert]) {
       res.status(OK).json(getExpertMeResponse);
     } else {
-      res.status(UNAUTHORIZED).json(expertUserdUnAuthorizedResponse);
+      res.status(UNAUTHORIZED).json(expertUserUnAuthorizedResponse);
     }
   });
 
@@ -125,6 +126,14 @@ const createApp = (app: express.Application): express.Application => {
       res.status(OK).json(expertDashboardResponse);
     } else {
       res.status(UNAUTHORIZED).json(expertDashboardUnAuthorizedResponse);
+    }
+  });
+
+  app.put('/expert/me', (req: Request, res: Response) => {
+    if (req.cookies[CONFIG.cookies.expert]) {
+      res.status(CREATED).json(expertProfileUpdateSuccessResponse);
+    } else {
+      res.status(UNAUTHORIZED).json(expertUserUnAuthorizedResponse);
     }
   });
   return app;

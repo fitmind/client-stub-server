@@ -7,18 +7,18 @@ const getExpertMeResponse = {
   description:
     'II’m a versatile personal trainer, who has experience in Functional training, wieight training and yoga. I’ve been training people of all ages for over 12 years improving their overall quality of life.',
   email: 'expert1@fitmind.io',
-  expertise: ['PERSONAL_COACH', 'YOGA_COACH'],
+  isAnExpertIn: ['PERSONAL_COACH', 'YOGA_COACH'],
   phone: '123123132',
   weeklyAvailability: {
-    monday: ['00:00-00:30'],
-    tuesday: ['00:00-00:30'],
-    wednesday: ['00:00-00:30'],
-    thursday: ['00:00-00:30'],
-    friday: ['00:00-00:30'],
-    saturday: ['00:00-00:30'],
-    sunday: ['00:00-00:30'],
+    monday: [{ id: '0:00', label: '12 am to 12:30 am' }],
+    tuesday: [{ id: '0:30', label: '12:30 am to 1 am' }],
+    wednessday: [{ id: '0:30', label: '12:30 am to 1 am' }, { id: '0:00', label: '12 am to 12:30 am' }],
+    thursday: [{ id: '0:30', label: '12:30 am to 1 am' }, { id: '0:00', label: '12 am to 12:30 am' }],
+    friday: [{ id: '0:30', label: '12:30 am to 1 am' }, { id: '0:00', label: '12 am to 12:30 am' }],
+    saturday: [{ id: '0:30', label: '12:30 am to 1 am' }, { id: '0:00', label: '12 am to 12:30 am' }],
+    sunday: [{ id: '0:30', label: '12:30 am to 1 am' }, { id: '0:00', label: '12 am to 12:30 am' }],
   },
-  pictureUrl:
+  profilePictureUrl:
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBx76lQwzW2cAsjz5JqgVp_ReTpVji6G_pMO6crXSJn9NETq3F',
 };
 

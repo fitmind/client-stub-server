@@ -1,5 +1,5 @@
 const customerRegistrationSuccessResponse = {
-  message: 'user registered successfully',
+  status: 200,
 };
 
 export default customerRegistrationSuccessResponse;

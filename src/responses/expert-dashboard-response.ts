@@ -6,7 +6,7 @@ const expertDashboardResponse = {
       time: '3:30 PM, 3 May',
       email: 'diego@gmail.com',
       listing: 'Yoga Trainer',
-      price: '30 €',
+      price: '30 ',
     },
     {
       _id: '101',
@@ -14,7 +14,7 @@ const expertDashboardResponse = {
       time: '5:30 PM, 3 May',
       email: 'mark@gmail.com',
       listing: 'Gym PT',
-      price: '50 €',
+      price: '50 ',
     },
     {
       _id: '104',
@@ -22,7 +22,7 @@ const expertDashboardResponse = {
       time: '8:30 AM, 4 May',
       email: 'ada@gmail.com',
       listing: 'HIIT Coach',
-      price: '50 €',
+      price: '50 ',
     },
   ],
   pastBookings: [
@@ -32,7 +32,7 @@ const expertDashboardResponse = {
       time: '1:30 PM, 3 May',
       email: 'diego@gmail.com',
       listing: 'Yoga Trainer',
-      price: '30 €',
+      price: '30 ',
     },
     {
       _id: '140',
@@ -40,7 +40,7 @@ const expertDashboardResponse = {
       time: '2:30 PM, 3 May',
       email: 'mark@gmail.com',
       listing: 'Gym PT',
-      price: '50 €',
+      price: '50 ',
     },
     {
       _id: '108',
@@ -48,7 +48,7 @@ const expertDashboardResponse = {
       time: '4:30 AM, 4 May',
       email: 'ada@gmail.com',
       listing: 'HIIT Coach',
-      price: '50 €',
+      price: '50 ',
     },
   ],
   liveListings: [
@@ -57,7 +57,7 @@ const expertDashboardResponse = {
       name: 'Gym',
       listingPictureUrl: 'https://placeholder.com/',
       description: 'Blah BLah listing',
-      price: '50 €',
+      price: '50 ',
       createdAt: '2019-08-28',
       createdByExpert: {
         _id: '123',
@@ -87,7 +87,7 @@ const expertDashboardResponse = {
       name: 'Swim',
       listingPictureUrl: 'https://placeholder.com/',
       description: 'Blah BLah listing',
-      price: '50 €',
+      price: '50 ',
       createdAt: '2019-08-28',
       createdByExpert: {
         _id: '1232',

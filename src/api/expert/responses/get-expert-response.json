@@ -18,7 +18,14 @@
     {
       "_id": "5d6fa8d2f491b80938fb351d",
       "time": "2019-09-10T08:00:00.000Z",
-      "customer": null,
+      "customer": {
+        "_id": "5d6fa91a082a80094132a661",
+        "name": "an updated name4",
+        "email": "diegoromero.audio2@gmail.com",
+        "description": "some long string",
+        "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+        "createdTimeStamp": "2019-09-04T12:07:54.091Z"
+      },
       "listing": {
         "approvedStatus": "APPROVED",
         "_id": "5d6fa64479bbb0088ab1e98d",
@@ -112,7 +119,14 @@
     {
       "_id": "5d6fa8d2f491b80938fb351d",
       "time": "2019-09-10T08:00:00.000Z",
-      "customer": null,
+      "customer": {
+        "_id": "5d6fa91a082a80094132a661",
+        "name": "an updated name4",
+        "email": "diegoromero.audio2@gmail.com",
+        "description": "some long string",
+        "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+        "createdTimeStamp": "2019-09-04T12:07:54.091Z"
+      },
       "listing": {
         "approvedStatus": "APPROVED",
         "_id": "5d6fa64479bbb0088ab1e98d",

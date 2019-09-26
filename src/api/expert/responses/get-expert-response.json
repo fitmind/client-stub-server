@@ -1,10 +1,46 @@
 {
-  "id": "5d6fa91a082a80094132a661",
-  "name": "an updated name4",
-  "email": "diegoromero.audio2@gmail.com",
+  "id": "5d6f9e05448e9506db043104",
+  "name": "Diego",
+  "email": "diegoromero.audio@gmail.com",
   "description": "some long string",
-  "interestedInExpertiseAreas": ["PERSONAL_COACH", "YOGA_COACH"],
+  "isAnExpertIn": ["PERSONAL_COACH", "YOGA_COACH"],
+  "weeklyAvailability": {
+    "monday": ["08:00", "09:00", "10:00"],
+    "tuesday": ["07:00", "08:00", "09:00"],
+    "wednesday": ["06:00", "07:00", "08:00", "09:00"],
+    "thursday": ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
+    "friday": ["20:00", "21:00", "22:00", "23:00"],
+    "saturday": ["01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00"],
+    "sunday": ["00:00"]
+  },
+  "approvedStatus": "APPROVED",
   "pastBookings": [
+    {
+      "_id": "5d6fa8d2f491b80938fb351d",
+      "time": "2019-09-10T08:00:00.000Z",
+      "customer": null,
+      "listing": {
+        "approvedStatus": "APPROVED",
+        "_id": "5d6fa64479bbb0088ab1e98d",
+        "name": "Status listing",
+        "price": "100.00",
+        "description": "some listing desc",
+        "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+        "expertiseArea": "LIFE_COACH",
+        "postCode": "NW13LR",
+        "createdTimeStamp": "2019-09-04T11:55:48.547Z"
+      },
+      "expert": {
+        "approvedStatus": "APPROVED",
+        "_id": "5d6f9e05448e9506db043104",
+        "name": "Diego",
+        "email": "diegoromero.audio@gmail.com",
+        "description": "some long string",
+        "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+        "createdTimeStamp": "2019-09-04T11:20:37.274Z"
+      },
+      "__v": 0
+    },
     {
       "_id": "5d6fa930082a80094132a662",
       "time": "2019-09-10T09:00:00.000Z",
@@ -73,6 +109,32 @@
     }
   ],
   "futureBookings": [
+    {
+      "_id": "5d6fa8d2f491b80938fb351d",
+      "time": "2019-09-10T08:00:00.000Z",
+      "customer": null,
+      "listing": {
+        "approvedStatus": "APPROVED",
+        "_id": "5d6fa64479bbb0088ab1e98d",
+        "name": "Status listing",
+        "price": "100.00",
+        "description": "some listing desc",
+        "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+        "expertiseArea": "LIFE_COACH",
+        "postCode": "NW13LR",
+        "createdTimeStamp": "2019-09-04T11:55:48.547Z"
+      },
+      "expert": {
+        "approvedStatus": "APPROVED",
+        "_id": "5d6f9e05448e9506db043104",
+        "name": "Diego",
+        "email": "diegoromero.audio@gmail.com",
+        "description": "some long string",
+        "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+        "createdTimeStamp": "2019-09-04T11:20:37.274Z"
+      },
+      "__v": 0
+    },
     {
       "_id": "5d6fa930082a80094132a662",
       "time": "2019-09-10T09:00:00.000Z",

@@ -4,17 +4,9 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express, { Request, Response } from 'express';
 import helmet from 'helmet';
-import { CREATED, OK, UNAUTHORIZED } from 'http-status-codes';
 import morgan from 'morgan';
-import CONFIG from './config/config';
-import expertRegistrationSuccessResponse from './responses/expert-register-success-response';
-import expertLoginSuccessResponse from './responses/expert-success-response';
-import expertProfileUpdateSuccessResponse from './responses/expert-user-profile-response';
-import expertUserUnAuthorizedResponse from './responses/expert-user-unauthorized-response';
-import getExpertMeResponse from './responses/get-expert-response';
-import logoutSuccessResponse from './responses/logout-success-response';
-import createUserToken from './utils/create-token';
 import userRouter from './api/user/user';
+import expertRouter from './api/expert/expert';
 
 const createApp = (app: express.Application): express.Application => {
   app.use(
@@ -40,40 +32,8 @@ const createApp = (app: express.Application): express.Application => {
   });
 
   app.use('/user', userRouter);
+  app.use('/expert', expertRouter);
 
-  app.post('/expert/register', (req: Request, res: Response) => {
-    res.status(CREATED).json(expertRegistrationSuccessResponse);
-  });
-
-  app.post('/expert/login', (req: Request, res: Response) => {
-    const token = createUserToken('1');
-    res.status(201).cookie(CONFIG.cookies.expert, token, {
-      maxAge: CONFIG.authTokenExpiryDate,
-      httpOnly: true,
-    });
-
-    res.status(CREATED).json(expertLoginSuccessResponse);
-  });
-  app.get('/expert/me', (req: Request, res: Response) => {
-    if (req.cookies[CONFIG.cookies.expert]) {
-      res.status(OK).json(getExpertMeResponse);
-    } else {
-      res.status(UNAUTHORIZED).json(expertUserUnAuthorizedResponse);
-    }
-  });
-
-  app.post('/expert/logout', (req: Request, res: Response) => {
-    res.clearCookie(CONFIG.cookies.expert);
-    res.status(OK).json(logoutSuccessResponse);
-  });
-
-  app.put('/expert/me', (req: Request, res: Response) => {
-    if (req.cookies[CONFIG.cookies.expert]) {
-      res.status(CREATED).json(expertProfileUpdateSuccessResponse);
-    } else {
-      res.status(UNAUTHORIZED).json(expertUserUnAuthorizedResponse);
-    }
-  });
   return app;
 };
 

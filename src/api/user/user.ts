@@ -6,11 +6,11 @@ import getUserMeResponse from './responses/get-user-response.json';
 
 const userRouter = express.Router();
 
-userRouter.post('/user/register', (req: Request, res: Response) => {
+userRouter.post('/register', (req: Request, res: Response) => {
   res.sendStatus(CREATED);
 });
 
-userRouter.post('/user/login', (req: Request, res: Response) => {
+userRouter.post('/login', (req: Request, res: Response) => {
   const token = createUserToken('1');
   res.status(CREATED).cookie(CONFIG.cookies.user, token, {
     maxAge: CONFIG.authTokenExpiryDate,
@@ -20,12 +20,12 @@ userRouter.post('/user/login', (req: Request, res: Response) => {
   res.sendStatus(CREATED);
 });
 
-userRouter.post('/user/logout', (req: Request, res: Response) => {
+userRouter.post('/logout', (req: Request, res: Response) => {
   res.clearCookie(CONFIG.cookies.user);
   res.sendStatus(OK);
 });
 
-userRouter.get('/user/me', (req: Request, res: Response) => {
+userRouter.get('/me', (req: Request, res: Response) => {
   if (req.cookies[CONFIG.cookies.user]) {
     res.status(OK).json(getUserMeResponse);
   } else {
@@ -33,7 +33,7 @@ userRouter.get('/user/me', (req: Request, res: Response) => {
   }
 });
 
-userRouter.put('/user/me', (req: Request, res: Response) => {
+userRouter.put('/me', (req: Request, res: Response) => {
   if (req.cookies[CONFIG.cookies.user]) {
     res.sendStatus(OK);
   } else {

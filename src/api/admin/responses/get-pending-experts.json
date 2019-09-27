@@ -1,88 +1,86 @@
-{
-  "experts": [
-    {
-      "weeklyAvailability": {
-        "monday": ["08:00", "09:00", "10:00"],
-        "tuesday": ["07:00", "08:00", "09:00"],
-        "wednesday": ["06:00", "07:00", "08:00", "09:00"],
-        "thursday": ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
-        "friday": ["20:00", "21:00", "22:00", "23:00"],
-        "saturday": ["01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00"],
-        "sunday": ["00:00"]
-      },
-      "approvedStatus": "PENDING",
-      "isAnExpertIn": ["PERSONAL_COACH", "YOGA_COACH"],
-      "_id": "5d715169f5a6a207143d7890",
-      "name": "Diego",
-      "email": "gosia.szwed@gmail.com",
-      "description": "some long string",
-      "password": "$2b$10$dTZmQrn4CKWlhvv1hMnuOeFmYli6tsEGJrg846utikUkrWCxWOSs2",
-      "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
-      "createdTimeStamp": "2019-09-05T18:18:17.614Z",
-      "__v": 0
+[
+  {
+    "weeklyAvailability": {
+      "monday": ["08:00", "09:00", "10:00"],
+      "tuesday": ["07:00", "08:00", "09:00"],
+      "wednesday": ["06:00", "07:00", "08:00", "09:00"],
+      "thursday": ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
+      "friday": ["20:00", "21:00", "22:00", "23:00"],
+      "saturday": ["01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00"],
+      "sunday": ["00:00"]
     },
-    {
-      "weeklyAvailability": {
-        "monday": ["08:00", "09:00", "10:00"],
-        "tuesday": ["07:00", "08:00", "09:00"],
-        "wednesday": ["06:00", "07:00", "08:00", "09:00"],
-        "thursday": ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
-        "friday": ["20:00", "21:00", "22:00", "23:00"],
-        "saturday": ["01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00"],
-        "sunday": ["00:00"]
-      },
-      "approvedStatus": "PENDING",
-      "isAnExpertIn": ["PERSONAL_COACH", "YOGA_COACH"],
-      "_id": "5d8ca72806d7550d9f09374d",
-      "name": "Diego",
-      "email": "diegoromero123.audio@gmail.com",
-      "description": "some long string",
-      "password": "$2b$10$QpgX2R1PydQtX5GunLA/We3OvWfQQC0FFbPwIQ2EBFUXdiNcUsX8i",
-      "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
-      "createdTimeStamp": "2019-09-26T11:55:20.292Z",
-      "__v": 0
+    "approvedStatus": "PENDING",
+    "isAnExpertIn": ["PERSONAL_COACH", "YOGA_COACH"],
+    "_id": "5d715169f5a6a207143d7890",
+    "name": "Diego",
+    "email": "gosia.szwed@gmail.com",
+    "description": "some long string",
+    "password": "$2b$10$dTZmQrn4CKWlhvv1hMnuOeFmYli6tsEGJrg846utikUkrWCxWOSs2",
+    "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+    "createdTimeStamp": "2019-09-05T18:18:17.614Z",
+    "__v": 0
+  },
+  {
+    "weeklyAvailability": {
+      "monday": ["08:00", "09:00", "10:00"],
+      "tuesday": ["07:00", "08:00", "09:00"],
+      "wednesday": ["06:00", "07:00", "08:00", "09:00"],
+      "thursday": ["14:00", "15:00", "16:00", "17:00", "18:00", "19:00"],
+      "friday": ["20:00", "21:00", "22:00", "23:00"],
+      "saturday": ["01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00"],
+      "sunday": ["00:00"]
     },
-    {
-      "weeklyAvailability": {
-        "monday": [],
-        "tuesday": [],
-        "wednesday": [],
-        "thursday": [],
-        "friday": [],
-        "saturday": [],
-        "sunday": []
-      },
-      "approvedStatus": "PENDING",
-      "isAnExpertIn": ["PERSONAL_COACH"],
-      "_id": "5d8ca76406d7550d9f09374e",
-      "email": "hola@mail.com",
-      "name": "Diego",
-      "password": "$2b$10$pmd57td2.XIMF8Klxoc7ru2fputy2ZfkkoQ1H0yHhd4g6MfSt76Ey",
-      "description": "blah blah blah",
-      "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
-      "createdTimeStamp": "2019-09-26T11:56:20.680Z",
-      "__v": 0
+    "approvedStatus": "PENDING",
+    "isAnExpertIn": ["PERSONAL_COACH", "YOGA_COACH"],
+    "_id": "5d8ca72806d7550d9f09374d",
+    "name": "Diego",
+    "email": "diegoromero123.audio@gmail.com",
+    "description": "some long string",
+    "password": "$2b$10$QpgX2R1PydQtX5GunLA/We3OvWfQQC0FFbPwIQ2EBFUXdiNcUsX8i",
+    "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+    "createdTimeStamp": "2019-09-26T11:55:20.292Z",
+    "__v": 0
+  },
+  {
+    "weeklyAvailability": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": [],
+      "sunday": []
     },
-    {
-      "weeklyAvailability": {
-        "monday": [],
-        "tuesday": [],
-        "wednesday": [],
-        "thursday": [],
-        "friday": [],
-        "saturday": [],
-        "sunday": []
-      },
-      "approvedStatus": "PENDING",
-      "isAnExpertIn": ["PERSONAL_COACH"],
-      "_id": "5d8ca78f06d7550d9f09374f",
-      "email": "hol12323a@mail.com",
-      "name": "Diego",
-      "password": "$2b$10$ug8sMmIqepdsTIxiolM/ZOxXW5X/ihqVV69qWWjiJA2JcuQcsWn3G",
-      "description": "blah blah blah",
-      "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
-      "createdTimeStamp": "2019-09-26T11:57:03.381Z",
-      "__v": 0
-    }
-  ]
-}
+    "approvedStatus": "PENDING",
+    "isAnExpertIn": ["PERSONAL_COACH"],
+    "_id": "5d8ca76406d7550d9f09374e",
+    "email": "hola@mail.com",
+    "name": "Diego",
+    "password": "$2b$10$pmd57td2.XIMF8Klxoc7ru2fputy2ZfkkoQ1H0yHhd4g6MfSt76Ey",
+    "description": "blah blah blah",
+    "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+    "createdTimeStamp": "2019-09-26T11:56:20.680Z",
+    "__v": 0
+  },
+  {
+    "weeklyAvailability": {
+      "monday": [],
+      "tuesday": [],
+      "wednesday": [],
+      "thursday": [],
+      "friday": [],
+      "saturday": [],
+      "sunday": []
+    },
+    "approvedStatus": "PENDING",
+    "isAnExpertIn": ["PERSONAL_COACH"],
+    "_id": "5d8ca78f06d7550d9f09374f",
+    "email": "hol12323a@mail.com",
+    "name": "Diego",
+    "password": "$2b$10$ug8sMmIqepdsTIxiolM/ZOxXW5X/ihqVV69qWWjiJA2JcuQcsWn3G",
+    "description": "blah blah blah",
+    "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+    "createdTimeStamp": "2019-09-26T11:57:03.381Z",
+    "__v": 0
+  }
+]

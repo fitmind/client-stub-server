@@ -3,7 +3,7 @@ import { CREATED, OK } from 'http-status-codes';
 import createUserToken from '../../utils/create-token';
 import CONFIG from '../../config/config';
 import getPendingListings from './responses/get-pending-listings.json';
-import getPendingExerts from './responses/get-pending-listings.json';
+import getPendingExerts from './responses/get-pending-experts.json';
 import getExpertById from './responses/get-expert-by-id.json';
 import getListingById from './responses/get-listing-by-id.json';
 

@@ -16,13 +16,25 @@ const createApp = (app: express.Application): express.Application => {
     }),
   );
   app.use(compression());
-  app.use(
-    cors({
-      origin: process.env.CLIENT_ORIGIN || 'http://localhost:3000',
-      credentials: true,
-    }),
-  );
-  // app.use(cors())
+
+  const CLIENT_PLATFORM_ORIGIN = process.env.CLIENT_ORIGIN;
+  const ADMIN_PLATFORM_ORIGIN = process.env.ADMIN_ORIGIN;
+
+  const whitelist = [CLIENT_PLATFORM_ORIGIN, ADMIN_PLATFORM_ORIGIN];
+
+  const options: cors.CorsOptions = {
+    credentials: true,
+    origin: (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void): void => {
+      if (whitelist.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  };
+
+  app.use(cors(options));
+
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(cookieParser());

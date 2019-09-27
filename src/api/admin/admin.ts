@@ -16,7 +16,7 @@ adminRouter.post('/login', (req: Request, res: Response) => {
     httpOnly: true,
   });
 
-  res.sendStatus(CREATED);
+  res.sendStatus(OK);
 });
 
 adminRouter.post('/logout', (req: Request, res: Response) => {

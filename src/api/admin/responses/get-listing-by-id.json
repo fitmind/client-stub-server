@@ -1,0 +1,20 @@
+{
+  "approvedStatus": "PENDING",
+  "_id": "5d6a50c1b244cd073435cebe",
+  "name": "New listing!",
+  "price": "100.00",
+  "description": "some listing desc",
+  "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+  "expertiseArea": "LIFE_COACH",
+  "postCode": "NW13LR",
+  "createdByExpert": {
+    "approvedStatus": "APPROVED",
+    "_id": "5d6a504e2760900718f9e025",
+    "email": "testemail@gmail.com",
+    "description": "some long string",
+    "pictureUrl": "https://fitmind-dev.s3.eu-west-2.amazonaws.com/mock-images/daniel_photo.png",
+    "createdTimeStamp": "2019-08-31T10:47:42.505Z"
+  },
+  "createdTimeStamp": "2019-08-31T10:49:37.962Z",
+  "__v": 0
+}

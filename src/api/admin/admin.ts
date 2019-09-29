@@ -32,7 +32,7 @@ adminRouter.get('/expert/:id', (req: Request, res: Response) => {
   res.status(OK).json(getExpertById);
 });
 
-adminRouter.get('/expert/approve/:id', (req: Request, res: Response) => {
+adminRouter.put('/expert/approve/:id', (req: Request, res: Response) => {
   res.sendStatus(OK);
 });
 
@@ -44,7 +44,7 @@ adminRouter.get('/listing/:id', (req: Request, res: Response) => {
   res.status(OK).json(getListingById);
 });
 
-adminRouter.get('/listing/approve/:id', (req: Request, res: Response) => {
+adminRouter.put('/listing/approve/:id', (req: Request, res: Response) => {
   res.sendStatus(OK);
 });
 

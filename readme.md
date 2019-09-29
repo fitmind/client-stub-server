@@ -51,3 +51,9 @@ yarn lint
 ```bash
 yarn lint:fix
 ```
+
+## Get logs from Heroku:
+
+```bash
+heroku logs --tail --app fitmind-test-server
+```

@@ -12,12 +12,11 @@ expertRouter.post('/register', (req: Request, res: Response) => {
 
 expertRouter.post('/login', (req: Request, res: Response) => {
   const token = createUserToken('1');
-  res.status(CREATED).cookie(CONFIG.cookies.expert, token, {
+  res.cookie(CONFIG.cookies.expert, token, {
     maxAge: CONFIG.authTokenExpiryDate,
     httpOnly: true,
   });
-
-  res.sendStatus(CREATED);
+  res.sendStatus(OK);
 });
 
 expertRouter.post('/logout', (req: Request, res: Response) => {

@@ -8,6 +8,7 @@ import morgan from 'morgan';
 import userRouter from './api/user/user';
 import expertRouter from './api/expert/expert';
 import adminRouter from './api/admin/admin';
+import listingRouter from './api/listing/listing';
 
 const createApp = (app: express.Application): express.Application => {
   app.use(
@@ -47,6 +48,7 @@ const createApp = (app: express.Application): express.Application => {
   app.use('/user', userRouter);
   app.use('/expert', expertRouter);
   app.use('/admin', adminRouter);
+  app.use('/listings', listingRouter);
 
   return app;
 };
